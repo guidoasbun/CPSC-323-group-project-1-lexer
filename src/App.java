@@ -1,8 +1,40 @@
 import java.io.FileReader;
 import java.io.PrintWriter;
+import java.util.Arrays;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 public class App {
+
+    final ArrayList<String> OPERATORS = new ArrayList<String>(Arrays.asList(
+            "+", "-", "*", "/", "%", // Arithmetic Operators
+            "<", ">", "<=", ">=", "==", "!=", // Relational Operators
+            "&&", "||", "!", // Logical Operators
+            "&", "|", "^", "~", "<<", ">>", // Bitwise Operators
+            "=", "+=", "-=", "*=", "/=", "%=", "&=", "|=", "^=", "<<=", ">>=", // Assignment Operators
+            "?:", "->", "::", "." // Miscellaneous Operators
+    ));
+
+    final ArrayList<String> SYMBOLS = new ArrayList<String>(Arrays.asList(
+            "{", "}", "(", ")", "[", "]", ";", ",", ".", // Common delimiters and separators
+            "\"", "'", "#", // String literals, character literals, and preprocessor directive (in some languages)
+            "@", "`", ":", // Annotations, backticks, and the colon symbol
+            "\\", // Escape character
+            "$" // Variable identifier in some scripting languages
+    ));
+
+    ArrayList<String> KEYWORDS = new ArrayList<String>(Arrays.asList(
+            "abstract", "assert", "boolean", "break", "byte",
+            "case", "catch", "char", "class", "const",
+            "continue", "default", "do", "double", "else",
+            "enum", "extends", "final", "finally", "float",
+            "for", "goto", "if", "implements", "import",
+            "instanceof", "int", "interface", "long", "native",
+            "new", "package", "private", "protected", "public",
+            "return", "short", "static", "strictfp", "super",
+            "switch", "synchronized", "this", "throw", "throws",
+            "transient", "try", "void", "volatile", "while"
+    ));
     public static void main(String[] args) {
 
         // Declaring input and output file names and where they are located
@@ -62,7 +94,7 @@ public class App {
 
         // maybe add more states
         enum State {
-            Normal, Keyword, Symbol, Identifier, Integer, Operator, String, Constants
+            Normal, Keyword, Symbol, Identifier, Integer, Real, Operator, String
         }
 
         State state = State.Normal;
@@ -82,6 +114,7 @@ public class App {
             switch (state) {
                 case Normal:
                     // TODO: implement the normal state
+
                     break;
                 case Keyword:
                     // TODO: implement the keyword state
@@ -95,15 +128,17 @@ public class App {
                 case Integer:
                     // TODO: implement the integer state
                     break;
+                case Real:
+                    // TODO: implement the real state
+                    break;
                 case Operator:
                     // TODO: implement the operator state
                     break;
                 case String:
                     // TODO: implement the string state
                     break;
-                case Constants:
-                    // TODO: implement the constants state
-                    break;
+                default:
+                    // TODO: implement the default state
             }
 
         }

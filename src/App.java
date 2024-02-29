@@ -1,3 +1,5 @@
+//CADE TESTING GITHUB PUSH
+
 import java.io.FileReader;
 import java.io.PrintWriter;
 import java.util.Arrays;
@@ -71,7 +73,7 @@ public class App {
 
             ArrayList<String[]> lexemeToken = tokenLexemeParser(line);
 
-            // TOTO: go through the arraylist and find the lexemes
+            // TODO: go through the arraylist and find the lexemes
 
             for (String[] lexemeTokenPair : lexemeToken) {
                 System.out.println(lexemeTokenPair[0] + " " + lexemeTokenPair[1]);

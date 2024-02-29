@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.ArrayList;
 public class App {
-
     final ArrayList<String> OPERATORS = new ArrayList<String>(Arrays.asList(
             "+", "-", "*", "/", "%", // Arithmetic Operators
             "<", ">", "<=", ">=", "==", "!=", // Relational Operators
@@ -23,7 +22,7 @@ public class App {
             "$" // Variable identifier in some scripting languages
     ));
 
-    ArrayList<String> KEYWORDS = new ArrayList<String>(Arrays.asList(
+    final ArrayList<String> KEYWORDS = new ArrayList<String>(Arrays.asList(
             "abstract", "assert", "boolean", "break", "byte",
             "case", "catch", "char", "class", "const",
             "continue", "default", "do", "double", "else",
@@ -92,6 +91,8 @@ public class App {
     
     public static ArrayList<String[]> tokenLexemeParser(String input) {
 
+        // I am trying to implement a Finite State Machine (FSM) to parse the input string
+        // TODO: maybe another approach is better???
         // maybe add more states
         enum State {
             Normal, Keyword, Symbol, Identifier, Integer, Real, Operator, String

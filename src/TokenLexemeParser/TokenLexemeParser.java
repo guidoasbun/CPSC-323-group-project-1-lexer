@@ -14,7 +14,17 @@ public class TokenLexemeParser {
         ArrayList<String[]> tokens = new ArrayList<>();
 
         // Regular expression to tokenize the input file
-
+        // The regular expression is divided into 5 groups all in one line
+        // 1. Keywords
+        // 2. Separators
+        // 3. Identifiers
+        // 4. Real and Integer
+        //   Real is a number with a decimal point
+        //   Integer is a number without a decimal point
+        // 5. String
+        // Pattern is used to compile the regular expression
+        // Matcher is used to match the regular expression with the content
+        // Kind of like using 5 State Machines in one regular expression
         String regex = "\\b(while|int|float|if|else)\\b|([;{}(),<>=])|([A-Za-z_][A-Za-z0-9_]*)|(\\d+\\.\\d+|\\d+)|(\"[^\"]*\")";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(content);

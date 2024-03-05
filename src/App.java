@@ -25,7 +25,7 @@ public class App {
         // then write the tokens to the output file
         if (content != null) {
             content = TokenLexemeParser.removeComments(content);
-            ArrayList<String[]> tokens = TokenLexemeParser.lexAnalysis(content);
+            ArrayList<String[]> tokens = TokenLexemeParser.lexicalAnalyzer(content);
             FileReadWrite.writeFile(outputFileName, tokens);
         }
     }

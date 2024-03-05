@@ -9,9 +9,9 @@ import java.util.regex.Pattern;
 
 public class TokenLexemeParser {
 
-    public static ArrayList<String[]> lexAnalysis(String content) {
+    public static ArrayList<String[]> lexicalAnalyzer(String content) {
 
-        ArrayList<String[]> tokens = new ArrayList<>();
+        ArrayList<String[]> tokensLexemes = new ArrayList<>();
 
         // Regular expression to tokenize the input file
         // The regular expression is divided into 5 groups all in one line
@@ -24,29 +24,29 @@ public class TokenLexemeParser {
         // 5. String
         // Pattern is used to compile the regular expression
         // Matcher is used to match the regular expression with the content
-        // Kind of like using 5 State Machines in one regular expression
-        String regex = "\\b(while|int|float|if|else)\\b|([;{}(),<>=])|([A-Za-z_][A-Za-z0-9_]*)|(\\d+\\.\\d+|\\d+)|(\"[^\"]*\")";
-        Pattern pattern = Pattern.compile(regex);
+        // Kind of like using 5 State FSA in one regular expression
+        String states = "\\b(while|int|float|if|else)\\b|([;{}(),<>=])|([A-Za-z_][A-Za-z0-9_]*)|(\\d+\\.\\d+|\\d+)|(\"[^\"]*\")";
+        Pattern pattern = Pattern.compile(states);
         Matcher matcher = pattern.matcher(content);
 
         while (matcher.find()) {
             if (matcher.group(1) != null) {
-                tokens.add(new String[]{"Keyword", matcher.group()});
+                tokensLexemes.add(new String[]{"Keyword", matcher.group()});
             } else if (matcher.group(2) != null) {
-                tokens.add(new String[]{"Separator", matcher.group()});
+                tokensLexemes.add(new String[]{"Separator", matcher.group()});
             } else if (matcher.group(3) != null) {
-                tokens.add(new String[]{"Identifier", matcher.group()});
+                tokensLexemes.add(new String[]{"Identifier", matcher.group()});
             } else if (matcher.group(4) != null) {
                 if (matcher.group().contains(".")) {
-                    tokens.add(new String[]{"Real", matcher.group()});
+                    tokensLexemes.add(new String[]{"Real", matcher.group()});
                 } else {
-                    tokens.add(new String[]{"Integer", matcher.group()});
+                    tokensLexemes.add(new String[]{"Integer", matcher.group()});
                 }
             } else if (matcher.group(5) != null) {
-                tokens.add(new String[]{"String", matcher.group()});
+                tokensLexemes.add(new String[]{"String", matcher.group()});
             }
         }
-        return tokens;
+        return tokensLexemes;
     }
 
     // Removes inline comments

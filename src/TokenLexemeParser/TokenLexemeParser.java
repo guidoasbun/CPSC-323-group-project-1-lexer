@@ -25,8 +25,13 @@ public class TokenLexemeParser {
         // Pattern is used to compile the regular expression
         // Matcher is used to match the regular expression with the content
         // Kind of like using 5 State FSA in one regular expression
-        String states = "\\b(while|int|float|if|else)\\b|([;{}(),<>=])|([A-Za-z_][A-Za-z0-9_]*)|(\\d+\\.\\d+|\\d+)|(\"[^\"]*\")";
-        Pattern pattern = Pattern.compile(states);
+        String tokens = "\\b(while|int|float|if|else|for|return|void|struct|class|public|static|catch|def|import|elif)\\b|" + // Keywords, there are many more depending on language
+                "([;{}(),<>=])|" + // Separators
+                "([A-Za-z_][A-Za-z0-9_]*)|" + // Identifiers
+                "(\\d+\\.\\d+|\\d+)|" + // Real and Integer
+                "(\"[^\"]*\")"; // String
+
+        Pattern pattern = Pattern.compile(tokens);
         Matcher matcher = pattern.matcher(content);
 
         while (matcher.find()) {

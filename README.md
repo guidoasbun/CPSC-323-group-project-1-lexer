@@ -1,14 +1,19 @@
 # Lexical Analyzer (Lexer)
 ## Contributors
 
-| Name            | Link to GitHub Account                      |
-|-----------------|---------------------------------------------|
-| Guido Asbun     | [GitHub](https://github.com/guidoasbun)     |
-| Cade Duncan     | [GitHub](https://github.com/Stingrayss)      |
-| Briyana Verdugo | [GitHub](https://github.com/B-T-V) |
+| Name            | Link to GitHub Account                  |
+|-----------------|-----------------------------------------|
+| Guido Asbun     | [GitHub](https://github.com/guidoasbun) |
+| Cade Duncan     | [GitHub](https://github.com/Stingrayss) |
+| Briyana Verdugo | [GitHub](https://github.com/B-T-V)      |
 
 ## Link to GitHub Repository
 [GitHub Repository](https://github.com/guidoasbun/CPSC-323-group-project-1-lexer)
+
+## Links
+- [View the test input file - input_scode.txt](src/InputOutputFiles/input_scode.txt)
+- [View the test output file - output_scode.txt](src/InputOutputFiles/output_scode.txt)
+- [View the Design Document - FSA_mydesign.doc]()
 
 ## Description
 - This program is a lexical analyzer (lexer) that reads in text (code) from a file then tokenizes the text into a list of tokens and lexemes. The program then outputs the list of tokens and lexemes to a file.

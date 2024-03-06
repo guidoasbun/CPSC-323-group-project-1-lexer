@@ -3,10 +3,13 @@ while (k < upper) {
     if (s < 33.00) {
         s = 33.00;
         // This should be ignored
+        }
 }
 
 /* This should be ignored as well*/
+class A {
     k = k + 1;
     s = s + 1.00;
+    System.out.println(s);
 }
 // This should be ignored

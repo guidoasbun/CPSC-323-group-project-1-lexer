@@ -10,11 +10,12 @@
 ## Link to GitHub Repository
 [GitHub Repository](https://github.com/guidoasbun/CPSC-323-group-project-1-lexer)
 
-## Links
-- [View the code](src)
-- [View the test input file - input_scode.txt](src/InputOutputFiles/input_scode.txt)
-- [View the test output file - output_scode.txt](src/InputOutputFiles/output_scode.txt)
-- [View the Design Document - FSA_mydesign.doc](DesignFile/FSA_mydesign.pdf)
+## Links to files
+1. [View the code](src)
+2. [View the test input file - input_scode.txt](src/InputOutputFiles/input_scode.txt)
+3. [View the test output file - output_scode.txt](src/InputOutputFiles/output_scode.txt)
+4. [View the Design Document - FSA_mydesign.doc](DesignFile/FSA_mydesign.pdf)
+5. [View the Read me file (you are already on the Readme)](README.md)
 
 ## Description
 - This program is a lexical analyzer (lexer) that reads in text (code) from a file then tokenizes the text into a list of tokens and lexemes. The program then outputs the list of tokens and lexemes to a file.

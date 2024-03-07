@@ -6,10 +6,10 @@ while (k < upper) {
         }
 }
 
-/* This should be ignored as well*/
 class A {
-    k = k + 1;
-    s = s + 1.00;
+    k = [k + 1];
+    String s = "Hello";
+    s = s + 1.00; // This should be ignored
     System.out.println(s);
 }
 // This should be ignored
